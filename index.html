@@ -5,14 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Side Mission</title>
+    <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
-    <div>
+    <header>
+        <h1>Daily Side Mission</h1>
+    </header>
+     
+    <div id="mission-div">
         <p id="mission"></p>
     </div>
 
-    <div>
-        <p id="xp"></p>
+    <div id="buttons-div">
+        <button id="completed-button">Completed</button>
+        <button id="failed-button">Attempted</button>
+    </div>
+
+    <div class="xp-bar-container">
+        <div class="xp-bar">
+            <div class="xp-progress"></div>
+        </div>
+        <div class="level">Level <span id="level-num">1</span>
+        </div>
+        <div class="xp-points">XP: <span id="xp-num">0</span>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

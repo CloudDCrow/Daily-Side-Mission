@@ -1,0 +1,85 @@
+body {
+    background-color: rgb(43, 43, 43);
+}
+
+header {
+    border-bottom: 1px solid white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 33px;
+    letter-spacing: .01em;
+}
+
+#buttons-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vh;
+}
+
+#completed-button {
+    height: 6vh;
+    width: 24vh;
+    margin-right: 1vh;
+
+    background-color: green;
+}
+
+#failed-button {
+    height: 6vh;
+    width: 24vh;
+    margin-left: 1vh;
+
+    background-color: rgb(255, 174, 0);
+}
+
+#mission-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15vh;
+    font-size: 5vh;
+}
+
+#mission {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.xp-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+    color: white;
+  }
+  
+  .xp-bar {
+    width: 50%;
+    height: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .xp-progress {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px;
+  }
+  
+  .level {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .xp-points {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
