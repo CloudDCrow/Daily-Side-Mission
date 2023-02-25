@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Muli";
+  src: url("Muli.ttf");
+}
+
 body {
     background-color: rgb(43, 43, 43);
 }
@@ -9,6 +14,7 @@ header {
 h1 {
     color: white;
     text-align: center;
+    font-family: "Muli";
     font-weight: 700;
     font-size: 33px;
     letter-spacing: .01em;
@@ -22,19 +28,92 @@ h1 {
 }
 
 #completed-button {
-    height: 6vh;
-    width: 24vh;
-    margin-right: 1vh;
+  position: relative;
+  height: 6vh;
+  width: 24vh;
+  margin-right: 2vh;
 
-    background-color: green;
+  font-family: "Muli";
+  font-size: 0.9rem;
+  background-color: #124d12;
+  color: white;
+
+  border: #5fa85f solid 1px;
+  transition: background-color 0.5s ease;
+  background-image: linear-gradient(to bottom right, green 50%, transparent 50%);
+  background-size: 200% 200%;
+  background-position: top left;
+}
+
+#completed-button:hover {
+  animation: fill-color 0.5s ease forwards;
+}
+
+#completed-button::before,
+#completed-button::after {
+  content: "┼";
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid #f2f2f2;
+}
+
+#completed-button::before {
+  bottom: -5px;
+  left: -5px;
+  width: 10px;
+  height: 1px;
+}
+
+#completed-button::after {
+  bottom: -5px;
+  right: -5px;
+  width: 10px;
+  height: 1px;
 }
 
 #failed-button {
-    height: 6vh;
-    width: 24vh;
-    margin-left: 1vh;
+  position: relative;
+  height: 6vh;
+  width: 24vh;
+  margin-left: 2vh;
 
-    background-color: rgb(255, 174, 0);
+  font-family: "Muli";
+  font-size: 0.9rem;
+  background-color: #856a12;
+  color: white;
+
+  border: #e9d28d solid 1px;
+  transition: background-color 0.5s ease;
+  background-image: linear-gradient(to bottom right, rgb(173, 128, 4) 50%, transparent 50%);
+  background-size: 200% 200%;
+  background-position: top left;
+}
+
+#failed-button:hover {
+  animation: fill-color 1s ease forwards;
+}
+
+#failed-button::after {
+  content: "♦";
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid #f2f2f2;
+}
+
+#failed-button::after {
+  bottom: -5px;
+  right: 11vh;
+  width: 10px;
+  height: 3px;
+}
+
+@keyframes fill-color {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: bottom right;
+  }
 }
 
 #mission-div {
@@ -58,28 +137,28 @@ h1 {
     color: white;
   }
   
-  .xp-bar {
-    width: 50%;
-    height: 20px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .xp-progress {
-    width: 0;
-    height: 100%;
-    background-color: #4caf50;
-    border-radius: 10px;
-  }
-  
-  .level {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .xp-points {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
+.xp-bar {
+  width: 50%;
+  height: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.xp-progress {
+  width: 0;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+.level {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.xp-points {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
