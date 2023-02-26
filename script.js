@@ -4,6 +4,7 @@ const xpProgress = document.querySelector('.xp-progress');
 const levelNum = document.querySelector('#level-num');
 const xpNum = document.querySelector('#xp-num');
 const completedButton = document.querySelector('#completed-button');
+const failedButton = document.querySelector("#failed-button");
 
 let xp = 0;
 let level = 1;
@@ -36,12 +37,22 @@ function levelUp() {
 }
 
 function handleCompletedButtonClick() {
-  // Generate a random amount of XP between 5 and 10
   const gainedXP = Math.floor(Math.random() * (8 - 5 + 1)) + 5;
   
   xp += gainedXP;
   
-  // If we've reached the XP requirement for the current level, level up
+  if (xp >= xpRequirement) {
+    levelUp();
+  }
+  
+  updateXPBar();
+}
+
+function handleFailedButtonClick() {
+  const gainedXP = 2;
+  
+  xp += gainedXP;
+  
   if (xp >= xpRequirement) {
     levelUp();
   }
@@ -50,3 +61,4 @@ function handleCompletedButtonClick() {
 }
 
 completedButton.addEventListener('click', handleCompletedButtonClick);
+failedButton.addEventListener('click', handleFailedButtonClick);

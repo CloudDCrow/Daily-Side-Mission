@@ -20,6 +20,20 @@ h1 {
     letter-spacing: .01em;
 }
 
+#mission-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+  font-size: 5vh;
+}
+
+#mission {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 6vh;
+}
+
 #buttons-div {
     display: flex;
     align-items: center;
@@ -31,7 +45,7 @@ h1 {
   position: relative;
   height: 6vh;
   width: 24vh;
-  margin-right: 2vh;
+  margin-right: 1vw;
 
   font-family: "Muli";
   font-size: 0.9rem;
@@ -75,7 +89,7 @@ h1 {
   position: relative;
   height: 6vh;
   width: 24vh;
-  margin-left: 2vh;
+  margin-left: 1vw;
 
   font-family: "Muli";
   font-size: 0.9rem;
@@ -114,19 +128,6 @@ h1 {
   100% {
     background-position: bottom right;
   }
-}
-
-#mission-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15vh;
-    font-size: 5vh;
-}
-
-#mission {
-    color: whitesmoke;
-    text-align: center;
 }
 
 .xp-bar-container {
