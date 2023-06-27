@@ -48,7 +48,7 @@ function handleCompletedButtonClick() {
   updateXPBar();
 }
 
-function handleFailedButtonClick() {
+function handleAttemptedButtonClick() {
   const gainedXP = 2;
   
   xp += gainedXP;
@@ -61,4 +61,4 @@ function handleFailedButtonClick() {
 }
 
 completedButton.addEventListener('click', handleCompletedButtonClick);
-failedButton.addEventListener('click', handleFailedButtonClick);
+failedButton.addEventListener('click', handleAttemptedButtonClick);
