@@ -19,19 +19,38 @@ const getRandomMission = () => {
       theMission.textContent = randomMission;
     });
 }
-  
-getRandomMission();
+
+function updateXP() {
+  if (localStorage.getItem('xp') != null) {
+    xp = parseInt(localStorage.getItem('xp'));
+  }
+  if (localStorage.getItem('xpRequirement') != null) {
+    xpRequirement = parseInt(localStorage.getItem('xpRequirement'));
+  }
+  if (localStorage.getItem('level') != null) {
+    level = parseInt(localStorage.getItem('level'));
+  }
+}
 
 function updateXPBar() {
   const progress = xp / xpRequirement * 100;
   xpProgress.style.width = `${progress}%`;
   xpNum.textContent = `${xp}/${xpRequirement}`;
+  levelNum.textContent = level;
 }
+  
+getRandomMission();
+updateXP();
+updateXPBar();
 
 function levelUp() {
   level++;
+  localStorage.setItem('level', level);
+
   xp = xp - xpRequirement;
   xpRequirement += 5;
+  localStorage.setItem('xpRequirement', xpRequirement);
+
   levelNum.textContent = level;
   xpNum.textContent = `${xp}/${xpRequirement}`;
 }
@@ -45,6 +64,7 @@ function handleCompletedButtonClick() {
     levelUp();
   }
   
+  localStorage.setItem('xp', xp)
   updateXPBar();
 }
 
@@ -56,7 +76,8 @@ function handleAttemptedButtonClick() {
   if (xp >= xpRequirement) {
     levelUp();
   }
-  
+
+  localStorage.setItem('xp', xp)
   updateXPBar();
 }
 
