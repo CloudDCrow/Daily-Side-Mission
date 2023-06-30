@@ -4,7 +4,10 @@ const xpProgress = document.querySelector('.xp-progress');
 const levelNum = document.querySelector('#level-num');
 const xpNum = document.querySelector('#xp-num');
 const completedButton = document.querySelector('#completed-button');
-const failedButton = document.querySelector("#failed-button");
+const attemptedButton = document.querySelector("#attempted-button");
+
+const date = new Date();
+const currentDate = date.getDate();
 
 let xp = 0;
 let level = 1;
@@ -62,10 +65,12 @@ function handleCompletedButtonClick() {
   
   if (xp >= xpRequirement) {
     levelUp();
-  }
+  }2
   
-  localStorage.setItem('xp', xp)
+  localStorage.setItem('xp', xp);
   updateXPBar();
+  completedButton.style.display = 'none';
+  attemptedButton.style.display = 'none';
 }
 
 function handleAttemptedButtonClick() {
@@ -79,7 +84,9 @@ function handleAttemptedButtonClick() {
 
   localStorage.setItem('xp', xp)
   updateXPBar();
+  completedButton.style.display = 'none';
+  attemptedButton.style.display = 'none';
 }
 
 completedButton.addEventListener('click', handleCompletedButtonClick);
-failedButton.addEventListener('click', handleAttemptedButtonClick);
+attemptedButton.addEventListener('click', handleAttemptedButtonClick);

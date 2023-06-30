@@ -84,7 +84,7 @@ h1 {
   height: 1px;
 }
 
-#failed-button {
+#attempted-button {
   position: relative;
   height: 6vh;
   width: 24vh;
@@ -102,17 +102,17 @@ h1 {
   background-position: top left;
 }
 
-#failed-button:hover {
+#attempted-button:hover {
   animation: fill-color 1s ease forwards;
 }
 
-#failed-button::after {
+#attempted-button::after {
   position: absolute;
   background-color: transparent;
   border: 1px solid #f2f2f2;
 }
 
-#failed-button::after {
+#attempted-button::after {
   bottom: -5px;
   right: 11vh;
   width: 10px;
