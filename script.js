@@ -29,6 +29,16 @@ const getRandomMission = () => {
     });
 }
 
+const getRandomQuote = () => {
+  fetch("quotes.json")
+    .then(response => response.json())
+    .then(data => {
+      const randomIndex = Math.floor(Math.random() * data.length);
+      const randomQuote = data[randomIndex].quote;
+      const randomAuthor = data[randomIndex].author;
+      theMission.textContent = randomQuote;
+    })
+}
 function updateXP() {
   if (localStorage.getItem('xp') != null) {
     xp = parseInt(localStorage.getItem('xp'));
@@ -106,7 +116,7 @@ function handleAttemptedButtonClick() {
 function missionDone() {
   completedButton.style.display = 'none';
   attemptedButton.style.display = 'none';
-  theMission.textContent = "Good Job";
+  getRandomQuote();
   localStorage.setItem('completed', 'True');
 }
 
