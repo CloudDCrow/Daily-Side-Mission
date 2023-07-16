@@ -35,7 +35,6 @@ const getRandomQuote = () => {
     .then(data => {
       const randomIndex = Math.floor(Math.random() * data.length);
       const randomQuote = data[randomIndex].quote;
-      const randomAuthor = data[randomIndex].author;
       theMission.textContent = randomQuote;
     })
 }
@@ -57,7 +56,9 @@ function checkDate() {
     localStorage.setItem('date', dateString);
   }
   if (localStorage.getItem('date') === dateString) {
-    theMission.textContent = localStorage.getItem('currentMission');
+    if (localStorage.getItem('completed') == 'False') {
+      theMission.textContent = localStorage.getItem('currentMission');
+    }
   }
   if (localStorage.getItem('date') !== dateString) {
     getRandomMission();
