@@ -1,7 +1,6 @@
 # Daily Side Mission
 Receive a random side mission every day and level up based on your progress.
 
-The only judge is yourself.
+## [Visit Website](https://clouddcrow.github.io/daily-side-mission/)
 
-Website link:
-[Daily Side Mission](https://clouddcrow.github.io/Daily-Side-Mission/)
+The only judge is yourself.
